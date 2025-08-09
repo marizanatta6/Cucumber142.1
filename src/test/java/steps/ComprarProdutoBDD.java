@@ -70,6 +70,21 @@ public class ComprarProdutoBDD {
         carrinhoPage.clicarEmCheckout();
     }
 
+    @Então("o nome do produto no carrinho deve ser {string}")
+    public void verificarNomeProdutoNoCarrinho(String nomeEsperado) {
+        carrinhoPage.assertNomeProduto(nomeEsperado);
+    }
+
+    @Então("o preço do produto no carrinho deve ser {string}")
+    public void verificarPrecoProdutoNoCarrinho(String precoEsperado) {
+        carrinhoPage.assertPrecoProduto(precoEsperado);
+    }
+
+    @Então("a quantidade do produto no carrinho deve ser {string}")
+    public void verificarQuantidadeProdutoNoCarrinho(String quantidadeEsperada) {
+        carrinhoPage.assertQuantidadeProduto(quantidadeEsperada);
+    }
+
     @Quando("preencho {string}, {string} e {string}")
 public void preencho_e(String firstName, String lastName, String zipCode) {
     checkoutPage = new CheckoutPage(driver);
