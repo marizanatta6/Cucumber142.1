@@ -25,6 +25,16 @@ public class CheckoutPage {
         return driver.getCurrentUrl().contains("checkout-step-two");
     }
 
+    public void clicarContinue() {
+        driver.findElement(By.id("continue")).click();
+    }
+
+    public boolean dadosEstaoCorretos() {
+        boolean nomePresente = driver.getPageSource().contains("Teste") && driver.getPageSource().contains("Usuario");
+        boolean cepPresente = driver.getPageSource().contains("12345");
+        return nomePresente && cepPresente;
+    }
+
     public void finalizarCompra() {
         driver.findElement(By.id("finish")).click();
     }
